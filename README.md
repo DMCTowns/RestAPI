@@ -1,2 +1,2 @@
 # RestAPI
-A PHP Rest Server and Consumer library
+An extendable PHP Rest Server and Consumer library
