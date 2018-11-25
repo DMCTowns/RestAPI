@@ -1,0 +1,14 @@
+{
+    "name": "dmc-towns/rest-api",
+    "description": "A PHP Library to provide a REST API Server and Consumer",
+    "require": {
+        "php": "^5.3.6 || ^7.0",
+        "dmc-towns/http": "^1.0",
+        "psr/log": "^1.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DMCTowns\\RestAPI\\": "src/"
+        }
+    }
+}
