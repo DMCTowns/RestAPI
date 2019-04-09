@@ -5,7 +5,7 @@
  */
 namespace DMCTowns\RestAPI;
 
-class RestConsumer{
+class Consumer{
 
 	/**
 	 * URL of service
