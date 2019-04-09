@@ -95,6 +95,17 @@ class RestConsumer{
 	}
 
 	/**
+	 * Returns basic authorisation header
+	 * @return array
+	 */
+	protected function _getTokenAuthHeader(){
+		if($this->_authType == 'token' && $this->_auth){
+			return array('Authorization' => 'Bearer ' . base64_encode($this->_auth));
+		}
+		return null;
+	}
+
+	/**
 	 * Returns authorisation headers
 	 * @param  string $method
 	 * @param  string $request
@@ -106,6 +117,9 @@ class RestConsumer{
 			return $headers;
 		}
 		if($header = $this->_getBasicAuthHeader()){
+			return $header;
+		}
+		if($header = $this->_getTokenAuthHeader()){
 			return $header;
 		}
 		return null;
