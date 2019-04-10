@@ -100,7 +100,7 @@ class Consumer{
 	 */
 	protected function _getTokenAuthHeader(){
 		if($this->_authType == 'token' && $this->_auth){
-			return array('Authorization' => 'Bearer ' . base64_encode($this->_auth));
+			return array('Authorization' => 'Bearer ' . $this->_auth);
 		}
 		return null;
 	}
