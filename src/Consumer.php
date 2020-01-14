@@ -106,6 +106,18 @@ class Consumer{
 	}
 
 	/**
+	 * Returns ApiKey authorisation header
+	 * @return array
+	 */
+	protected function _getApiKeyAuthHeader(){
+		if(strtolower($this->_authType) == 'apikey' && $this->_auth){
+			return array('ApiKey' => $this->_auth);
+		}
+		return null;
+	}
+
+
+	/**
 	 * Returns authorisation headers
 	 * @param  string $method
 	 * @param  string $request
@@ -120,6 +132,9 @@ class Consumer{
 			return $header;
 		}
 		if($header = $this->_getTokenAuthHeader()){
+			return $header;
+		}
+		if($header = $this->_getApiKeyAuthHeader()){
 			return $header;
 		}
 		return null;
